@@ -32,7 +32,8 @@ map('n', '<leader>r', ':so %<CR>')
 map('n', '<leader>w', ':w<CR>')
 
 -- Save and Quit Neovim
-map('n', '<leader>q', ':wqall!<CR>')
+map('n', '<leader>q', ':wq!<CR>')
+map('n', '<leaderQ', ':waqll!<CR>')
 
 -- Delete the buffer without closing the window
 keymap.set("n", "<leader>bk", "<cmd>bprevious <bar> bdelete #<cr>", 
@@ -59,6 +60,9 @@ keymap.set("n", "<C-t>", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>ot", ":FloatermNew<CR>")
 
 -- Telescope 
-keymap.set("n", "<leader>ff", ":cd ~/ && Telescop find_files hidden=true<CR>")
-keymap.set("n", "<leader>fr", ":Telescop oldfiles<CR>")
-keymap.set("n", "<leader><", ":Telescop buffers<CR>")
+keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
+keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>")
+keymap.set("n", "<leader><", ":Telescope buffers<CR>")
+
+-- Floaterm File navigation with lf
+keymap.set("n", "<leader>.", ":LfCurrentFile<CR>")

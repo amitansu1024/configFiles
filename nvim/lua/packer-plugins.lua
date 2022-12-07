@@ -71,6 +71,11 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- lf wrapper
+    use 'ptzz/lf.vim'
+
+    -- fugitive for git
+
     -- Automatically setup your configuration
      if packer_bootstrap then
     require('packer').sync()
