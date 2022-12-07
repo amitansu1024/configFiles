@@ -52,7 +52,26 @@ return require('packer').startup(function()
     -- snippets
     use 'hrsh7th/vim-vsnip'
 
-    -- Automatically setup your configuratio
+    -- DashBoard
+    use 'glepnir/dashboard-nvim'
+
+    -- Commenter
+    use 'tpope/vim-commentary'
+
+    -- Lualine
+    use 'nvim-lualine/lualine.nvim'
+
+    -- FloatTerm
+    use 'voldikss/vim-floaterm'
+
+    -- Telescope File finder
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    -- Automatically setup your configuration
      if packer_bootstrap then
     require('packer').sync()
   end

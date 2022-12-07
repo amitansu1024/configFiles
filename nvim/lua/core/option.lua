@@ -8,6 +8,8 @@ opt.swapfile = false
 opt.completeopt = 'menuone,menu,noselect'
 opt.relativenumber = true
 opt.pumheight = 10
+opt.pumwidth = 5
+vim.cmd('colorscheme gruvbox')
 
 -- Neovim UI
 opt.number = true
