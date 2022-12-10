@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  ["lf.vim"] = {
+    loaded = true,
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/lf.vim",
+    url = "https://github.com/ptzz/lf.vim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/lualine.nvim",

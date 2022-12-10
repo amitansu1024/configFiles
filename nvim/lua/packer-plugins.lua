@@ -74,7 +74,14 @@ return require('packer').startup(function()
     -- lf wrapper
     use 'ptzz/lf.vim'
 
-    -- fugitive for git
+    -- Rust tools 
+    use 'simrat39/rust-tools.nvim'
+
+    -- Speed up Rust
+    use 'lewis6991/impatient.nvim'
+
+    -- Lsp status bar
+    use 'nvim-lua/lsp-status.nvim'
 
     -- Automatically setup your configuration
      if packer_bootstrap then

@@ -80,3 +80,10 @@ local cmp = require'cmp'
   require('lspconfig')['rust_analyzer'].setup {
     capabilities = capabilities
   }
+
+    -- Removes jitter
+    vim.wo.signcolumn = "yes"
+
+    vim.opt.updatetime = 100
+
+    vim.opt.shortmess = vim.opt.shortmess + {c = true}

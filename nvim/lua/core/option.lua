@@ -9,6 +9,7 @@ opt.completeopt = 'menuone,menu,noselect'
 opt.relativenumber = true
 opt.pumheight = 10
 opt.pumwidth = 5
+opt.autochdir = true
 vim.cmd('colorscheme gruvbox')
 
 -- Neovim UI
@@ -36,3 +37,7 @@ opt.updatetime = 250
 
 -- Disable nvim intro
 opt.shortmess:append "sI"
+
+-- Floaterm
+g.floaterm_wintype = "split"
+g.floaterm_height = 10
