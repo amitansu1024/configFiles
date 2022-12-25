@@ -11,6 +11,7 @@ opt.pumheight = 10
 opt.pumwidth = 5
 opt.autochdir = true
 vim.cmd('colorscheme gruvbox')
+vim.cmd('set signcolumn=number')
 
 -- Neovim UI
 opt.number = true

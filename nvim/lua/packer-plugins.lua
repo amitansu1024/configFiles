@@ -80,8 +80,8 @@ return require('packer').startup(function()
     -- Speed up Rust
     use 'lewis6991/impatient.nvim'
 
-    -- Lsp status bar
-    use 'nvim-lua/lsp-status.nvim'
+    -- tree-sitter
+    use 'https://github.com/nvim-treesitter/nvim-treesitter'
 
     -- Automatically setup your configuration
      if packer_bootstrap then

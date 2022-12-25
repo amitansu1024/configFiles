@@ -26,7 +26,7 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
 -- Reload configuration
-map('n', '<leader>r', ':so %<CR>')
+map('n', '<leader>r', ':wa | sou | PackerSync %<CR>')
 
 -- Fast Saving
 map('n', '<leader>w', ':w<CR>')
@@ -66,3 +66,8 @@ keymap.set("n", "<leader><", ":Telescope buffers<CR>")
 
 -- Floaterm File navigation with lf
 keymap.set("n", "<leader>.", ":LfCurrentFile<CR>")
+
+-- change from terminal mode to normal mode
+keymap.set("t", "JK", "<C-\\><C-O>")
+
+
