@@ -84,15 +84,20 @@ _G.packer_plugins = {
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["ddc-nvim-lsp-doc"] = {
+    loaded = true,
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/ddc-nvim-lsp-doc",
+    url = "https://github.com/matsui54/ddc-nvim-lsp-doc"
+  },
+  ["denops.vim"] = {
+    loaded = true,
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/denops.vim",
+    url = "https://github.com/vim-denops/denops.vim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
-  },
-  ["impatient.nvim"] = {
-    loaded = true,
-    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["lf.vim"] = {
     loaded = true,
@@ -103,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["neovim-session-manager"] = {
+    loaded = true,
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
+    url = "https://github.com/Shatur/neovim-session-manager"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
@@ -145,10 +155,11 @@ _G.packer_plugins = {
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["rust-tools.nvim"] = {
+  ["project.nvim"] = {
+    config = { "\27LJ\2\nx\0\0\3\0\6\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0'\2\5\0B\0\2\1K\0\1\0\rprojects\19load_extension\14telescope\nsetup\17project_nvim\frequire\0" },
     loaded = true,
-    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
-    url = "https://github.com/simrat39/rust-tools.nvim"
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
   },
   tagbar = {
     loaded = true,
@@ -170,14 +181,38 @@ _G.packer_plugins = {
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
   },
+  ["vim-fountain"] = {
+    loaded = true,
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/vim-fountain",
+    url = "https://github.com/kblin/vim-fountain"
+  },
+  ["vim-sneak"] = {
+    loaded = true,
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/vim-sneak",
+    url = "https://github.com/justinmk/vim-sneak"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
+    loaded = true,
+    path = "/home/amitansu/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\2\nx\0\0\3\0\6\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0'\2\5\0B\0\2\1K\0\1\0\rprojects\19load_extension\14telescope\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")

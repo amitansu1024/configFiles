@@ -74,14 +74,40 @@ return require('packer').startup(function()
     -- lf wrapper
     use 'ptzz/lf.vim'
 
-    -- Rust tools 
-    use 'simrat39/rust-tools.nvim'
+    -- sneak vim motions
+    use 'justinmk/vim-sneak'
 
-    -- Speed up Rust
-    use 'lewis6991/impatient.nvim'
+    -- projects management with telescope
+    use {
+      "ahmedkhalf/project.nvim",
+      config = function()
+        require("project_nvim").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+        require('telescope').load_extension('projects')
+      end
+    }
+    -- which-key
+    use {
+      "folke/which-key.nvim",
+      config = function()
+      end
+    }
 
     -- tree-sitter
     use 'https://github.com/nvim-treesitter/nvim-treesitter'
+
+    -- lsp preview
+    use 'vim-denops/denops.vim'
+    use 'https://github.com/matsui54/ddc-nvim-lsp-doc'
+
+    -- session management
+    use 'https://github.com/Shatur/neovim-session-manager'
+
+    -- fountain mode
+    use 'https://github.com/kblin/vim-fountain'
 
     -- Automatically setup your configuration
      if packer_bootstrap then

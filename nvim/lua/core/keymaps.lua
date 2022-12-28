@@ -13,61 +13,73 @@ end
 --Change leader key
 vim.g.mapleader = " "
 
--- Map Esc to jk
+-- -- Map Esc to jk
 map('i', 'jk', '<Esc>')
 
--- Clear search highlighting with <leader> and c
-map('n', '<leader>c', ':noh<CR>')
+-- -- Clear search highlighting with <leader> and ch
+map('n', '<C-c>', ':noh<CR>')
 
--- Move around splits 
+-- -- Move around splits 
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
--- Reload configuration
-map('n', '<leader>r', ':wa | sou | PackerSync %<CR>')
+-- -- Fast Saving
+keymap.set("n", "<leader>bk", ":w<CR>", {desc = "write"})
 
--- Fast Saving
-map('n', '<leader>w', ':w<CR>')
+-- -- Save and Quit Neovim
+keymap.set("n", "<leader>nq", ":wqa!<CR>", {desc = "save and quit"})
 
--- Save and Quit Neovim
-map('n', '<leader>q', ':wq!<CR>')
-map('n', '<leaderQ', ':waqll!<CR>')
+-- -- Delete the buffer without closing the window
+keymap.set("n", "<leader>bk", "<cmd>bprevious <bar> bdelete #<cr>", {desc = "buffer kill"})
 
--- Delete the buffer without closing the window
-keymap.set("n", "<leader>bk", "<cmd>bprevious <bar> bdelete #<cr>", 
-{silent = true,
-desc = "delete buffer"})
+-- --- Change to current directory
+keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", {desc = "to current directory"})
 
---- Change to current directory
-keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change cwd" })
+-- -- Change directory to Home
+keymap.set("n", "<leader>ch", ":cd ~/<CR>", {desc = "to home directory"})
 
--- Change directory to Home
-keymap.set("n", "<leader>pd", ":cd ~/<CR>")
+-- -- TREE
+keymap.set("n", "<C-x>", ":NvimTreeToggle<CR>")
 
--- Run Code
-keymap.set("n", "<leader>cr", ":FloatermNew --autoclose=0 make % && ./%<CR>")
+-- -- FloatTerm 
+keymap.set("n", "<leader>ot", ":FloatermNew<CR>", {desc = "terminal"})
 
-
--- Buffer list
-keymap.set("n", "<leader><", ":Telescop buffers<CR>")
-
--- TREE
-keymap.set("n", "<C-t>", ":NvimTreeToggle<CR>")
-
--- FloatTerm 
-keymap.set("n", "<leader>ot", ":FloatermNew<CR>")
-
--- Telescope 
-keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true<CR>")
-keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>")
-keymap.set("n", "<leader><", ":Telescope buffers<CR>")
-
--- Floaterm File navigation with lf
-keymap.set("n", "<leader>.", ":LfCurrentFile<CR>")
+-- -- Floaterm File navigation with lf
+keymap.set("n", "<leader>.", ":LfCurrentFile<CR>", {desc = "navigate files"})
 
 -- change from terminal mode to normal mode
-keymap.set("t", "JK", "<C-\\><C-O>")
+keymap.set("t", "jk", "<C-\\><C-O>")
+
+-- -- to the config files
+keymap.set("n", "<leader>nc", ":e ~/.config/nvim/lua/<CR>", {desc = "config files"})
 
 
+-- -- debugger
+keymap.set("n", "<leader>od", ":Termdebug ", {desc = "debugger"}) -- open the debugger
+keymap.set("n", "<leader>dr", ":Run ", {desc = "run"}) -- Run the debugger
+keymap.set("n", "<leader>db", ":Break<CR>", {desc = "set breakpoints"}) -- Set breakpoints
+keymap.set("n", "<leader>dd", ":Clear<CR>", {desc = "clear breakpoints"}) -- Clear the breakpoint
+keymap.set("n", "<leader>dn", ":Over<CR>", {desc = "to next breakpoint"}) -- Go to the next breakpoint
+keymap.set("n", "<leader>dc", ":Continue<CR>", {desc = "continue"}) -- Continue to the next breakpoint
+keymap.set("n", "<leader>dq", ":Finish<CR>", {desc = "quit"}) -- Exit
+
+-- Session
+keymap.set("n", "<leader>os", ":SessionManager load_session<CR>", {desc = "sessions"})
+keymap.set("n", "<leader>sl", ":SessionManager load_last_session<CR>", {desc = "recent sessions"})
+keymap.set("n", "<leader>sa", ":SessionManager save_current_session<CR>", {desc = "add current session"})
+
+-- Telescope 
+keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {desc = "find files"})
+keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>", {desc = "recent files"})
+keymap.set("n", "<leader><", ":Telescope buffers<CR>", {desc = "buffers"})
+keymap.set("n", "<leader>gc", "Telescope git_commits<CR>", {desc = "git commits"})
+keymap.set("n", "<leader>gs", "Telescope git_status<CR>", {desc = "git status"})
+keymap.set("n", "<leader>gb", "Telescope git_branches<CR>", {desc = "git branches"})
+
+-- Code
+keymap.set("n", "<leader>cr", "FloatermNew --autoclose=0 make CXXFLAGS='-g' %:r && ./%:r<CR>", {desc = "compile and run"})
+keymap.set("n", "<leader>cc", "FloatermNew --autoclose=0 make CXXFLAGS='-g'", {desc = "compile"})
+
+vim.cmd('let g:lf_map_keys = 0')

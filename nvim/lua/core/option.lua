@@ -10,8 +10,11 @@ opt.relativenumber = true
 opt.pumheight = 10
 opt.pumwidth = 5
 opt.autochdir = true
+opt.signcolumn = "number"
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set signcolumn=number')
+vim.cmd('packadd termdebug')
+vim.cmd('let g:sneak#label=1')
 
 -- Neovim UI
 opt.number = true
@@ -42,3 +45,6 @@ opt.shortmess:append "sI"
 -- Floaterm
 g.floaterm_wintype = "split"
 g.floaterm_height = 10
+
+-- gdb
+g.termdebug_wide = 10
