@@ -5,16 +5,15 @@ local opt = vim.opt
 opt.mouse = 'a'
 opt.clipboard  = 'unnamedplus'
 opt.swapfile = false
-opt.completeopt = 'menuone,menu,noselect'
 opt.relativenumber = true
 opt.pumheight = 10
 opt.pumwidth = 5
 opt.autochdir = true
-opt.signcolumn = "number"
 vim.cmd('colorscheme gruvbox')
-vim.cmd('set signcolumn=number')
 vim.cmd('packadd termdebug')
 vim.cmd('let g:sneak#label=1')
+vim.o.completeopt = "menuone,noselect"
+vim.opt.foldenable = false
 
 -- Neovim UI
 opt.number = true
@@ -48,3 +47,8 @@ g.floaterm_height = 10
 
 -- gdb
 g.termdebug_wide = 10
+
+
+vim.cmd([[
+au FileType fountain ZenMode | set foldmethod=manual tw=68 spell
+]])

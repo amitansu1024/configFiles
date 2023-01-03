@@ -25,6 +25,12 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
+-- lazygit
+keymap.set("n", "<leader>gg", ":FloatermNew --wintype=float --height=0.8 --width=0.9 --autoclose=2 lazygit<CR>", {desc = "lazy git"})
+ 
+-- Go to website directory
+keymap.set("n", "<leader><CR>", ":e ~/.projects/website/content<CR>", {desc = "open website"})
+
 -- -- Fast Saving
 keymap.set("n", "<leader>bk", ":w<CR>", {desc = "write"})
 
@@ -46,11 +52,11 @@ keymap.set("n", "<C-x>", ":NvimTreeToggle<CR>")
 -- -- FloatTerm 
 keymap.set("n", "<leader>ot", ":FloatermNew<CR>", {desc = "terminal"})
 
--- -- Floaterm File navigation with lf
-keymap.set("n", "<leader>.", ":LfCurrentFile<CR>", {desc = "navigate files"})
+-- -- Floaterm File navigation with findr
+keymap.set("n", "<leader>.", ":Findr<CR>", {desc = "navigate files"})
 
 -- change from terminal mode to normal mode
-keymap.set("t", "jk", "<C-\\><C-O>")
+keymap.set("t", "jk", "<C-\\><C-N>")
 
 -- -- to the config files
 keymap.set("n", "<leader>nc", ":e ~/.config/nvim/lua/<CR>", {desc = "config files"})
@@ -74,12 +80,14 @@ keymap.set("n", "<leader>sa", ":SessionManager save_current_session<CR>", {desc 
 keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {desc = "find files"})
 keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>", {desc = "recent files"})
 keymap.set("n", "<leader><", ":Telescope buffers<CR>", {desc = "buffers"})
-keymap.set("n", "<leader>gc", "Telescope git_commits<CR>", {desc = "git commits"})
-keymap.set("n", "<leader>gs", "Telescope git_status<CR>", {desc = "git status"})
-keymap.set("n", "<leader>gb", "Telescope git_branches<CR>", {desc = "git branches"})
+keymap.set("n", "<leader>gc", ":Telescope git_commits<CR>", {desc = "git commits"})
+keymap.set("n", "<leader>gs", ":Telescope git_status<CR>", {desc = "git status"})
+keymap.set("n", "<leader>gb", ":Telescope git_branches<CR>", {desc = "git branches"})
+keymap.set("n", "<leader>op", ":Telescope projects<CR>", {desc = "projects"})
+keymap.set("n", "<leader>,", ":Telescope file_browser", {desc = "file navigate"})
 
 -- Code
-keymap.set("n", "<leader>cr", "FloatermNew --autoclose=0 make CXXFLAGS='-g' %:r && ./%:r<CR>", {desc = "compile and run"})
-keymap.set("n", "<leader>cc", "FloatermNew --autoclose=0 make CXXFLAGS='-g'", {desc = "compile"})
+keymap.set("n", "<leader>cr", ":FloatermNew --autoclose=0 make CXXFLAGS='-g' %:r && ./%:r<CR>", {desc = "compile and run"})
+keymap.set("n", "<leader>cc", ":FloatermNew --autoclose=0 make CXXFLAGS='-g'", {desc = "compile"})
 
 vim.cmd('let g:lf_map_keys = 0')

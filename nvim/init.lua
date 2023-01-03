@@ -8,3 +8,13 @@ require('plugins/dashboard')
 require('plugins/lualine')
 require('plugins/tree-sitter')
 require('plugins/which-key')
+require('plugins/sessions')
+require('plugins/org-mode')
+require('plugins/venn')
+require('plugins/nvim-web-devicons')
+require('plugins/telescope-file_browser')
+require('plugins/lsp-signature')
+
+require("mason").setup()
+
+vim.opt.signcolumn = "number"

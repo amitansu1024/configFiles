@@ -14,8 +14,27 @@ end
 
 -- Install Plugins
 return require('packer').startup(function()
+    -- draw diagram with venn 
+    use 'https://github.com/jbyuki/venn.nvim'
+
+    --themes
+    use 'https://github.com/GustavoPrietoP/doom-themes.nvim'
+
+    -- language servers
+    use 'https://github.com/williamboman/mason.nvim'
+    use "williamboman/mason-lspconfig.nvim"
+
+    -- lsp-signature
+    use 'https://github.com/ray-x/lsp_signature.nvim'
+
 	-- packer can manager itself
 	use 'wbthomason/packer.nvim'
+
+    -- icons
+    use 'nvim-tree/nvim-web-devicons'
+
+    --zen mode
+    use 'https://github.com/folke/zen-mode.nvim'
 
     -- File explorer
     use {
@@ -58,6 +77,9 @@ return require('packer').startup(function()
     -- Commenter
     use 'tpope/vim-commentary'
 
+    -- file browser telescope
+    use { "nvim-telescope/telescope-file-browser.nvim" }
+
     -- Lualine
     use 'nvim-lualine/lualine.nvim'
 
@@ -70,9 +92,6 @@ return require('packer').startup(function()
     -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
-
-    -- lf wrapper
-    use 'ptzz/lf.vim'
 
     -- sneak vim motions
     use 'justinmk/vim-sneak'
@@ -108,6 +127,23 @@ return require('packer').startup(function()
 
     -- fountain mode
     use 'https://github.com/kblin/vim-fountain'
+
+    --use org-mode
+    use {'nvim-orgmode/orgmode', config = function()
+      require('orgmode').setup{}
+    end
+    }
+
+    -- org bullets
+        use {'akinsho/org-bullets.nvim', config = function()
+      require('org-bullets').setup()
+    end}
+
+    -- findr incremental file searching
+    use 'https://github.com/conweller/findr.vim'
+
+    -- vim table
+    use 'https://github.com/dhruvasagar/vim-table-mode'
 
     -- Automatically setup your configuration
      if packer_bootstrap then
